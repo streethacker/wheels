@@ -1,0 +1,71 @@
+<md-content layout="column" class="md-padding gridListdemoBasicUsage">
+    <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
+        <!-- <md-grid-tile class="gray" md-rowspan="1" md-colspan="6" md-colspan-sm="1"> -->
+            <table class="pure-table pure-table-horizontal" style="width:100%;height:20%;">
+                <thead>
+                    <tr>
+                        <th colspan="8">
+                            <h3>Network</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Bytes Recv</th>
+                        <th>Bytes Sent</th>
+                        <th>Dropin</th>
+                        <th>Dropout</th>
+                        <th>Errin</th>
+                        <th>Errout</th>
+                        <th>Packets Recv</th>
+                        <th>Packets Rent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ng-bind="io.bytes_recv">{{io.bytes_recv}}</td>
+                        <td ng-bind="io.bytes_sent"></td>
+                        <td ng-bind="io.dropin"></td>
+                        <td ng-bind="io.dropout"></td>
+                        <td ng-bind="io.errin"></td>
+                        <td ng-bind="io.errout"></td>
+                        <td ng-bind="io.packets_recv"></td>
+                        <td ng-bind="io.packets_sent"></td>
+                    </tr>
+                </tbody>
+            </table>
+        <!-- </md-grid-tile> -->
+        <!-- <md-grid-tile class="gray" md-rowspan="2" md-colspan="6" md-colspan-sm="1"> -->
+            <table class="pure-table pure-table-horizontal" 
+            style="width:100%;margin-top:2%;height:75%;overflow:scroll">
+                <thead>
+                    <tr>
+                        <th colspan="8">
+                            <h3>Connections</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>family</th>
+                        <th>fd</th>
+                        <th>laddr</th>
+                        <th>pid</th>
+                        <th>proto</th>
+                        <th>raddr</th>
+                        <th>status</th>
+                        <th>type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="connection in connections">
+                        <td ng-bind="connection.family"></td>
+                        <td ng-bind="connection.fd"></td>
+                        <td ng-bind="connection.laddr"></td>
+                        <td ng-bind="connection.pid"></td>
+                        <td ng-bind="connection.proto"></td>
+                        <td ng-bind="connection.raddr"></td>
+                        <td ng-bind="connection.status"></td>
+                        <td ng-bind="connection.type"></td>
+                    </tr>
+                </tbody>
+            </table>
+        <!-- </md-grid-tile> -->
+    </md-grid-list>
+</md-content>

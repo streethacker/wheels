@@ -1,0 +1,146 @@
+<md-content layout="column" class="md-padding gridListdemoBasicUsage">
+  <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6" md-row-height-gt-md="6:4" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
+    <md-grid-tile md-rowspan="5" md-colspan="2" md-colspan-sm="1">
+      <table class="pure-table pure-table-horizontal" style="width:100%;height:100%;">
+        <thead>
+          <tr>
+          	<th colspan="2">
+              <strong>CPU</strong>
+          	</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>guest</td>
+            <td ng-bind="cpuTimes.guest"></td>
+          </tr>
+          <tr>
+            <td>guest_nice</td>
+            <td ng-bind="cpuTimes.guest_nice"></td>
+          </tr>
+          <tr>
+            <td>idle</td>
+            <td ng-bind="cpuTimes.idle"></td>
+          </tr>
+          <tr>
+            <td>iowait</td>
+            <td ng-bind="cpuTimes.iowait"></td>
+          </tr>
+          <tr>
+            <td>irq</td>
+            <td ng-bind="cpuTimes.irq"></td>
+          </tr>
+          <tr>
+            <td>nice</td>
+            <td ng-bind="cpuTimes.nice"></td>
+          </tr>
+          <tr>
+            <td>softirq</td>
+            <td ng-bind="cpuTimes.softirq"></td>
+          </tr>
+          <tr>
+            <td>steal</td>
+            <td ng-bind="cpuTimes.steal"></td>
+          </tr>
+          <tr>
+            <td>system</td>
+            <td ng-bind="cpuTimes.system"></td>
+          </tr>
+          <tr>
+            <td>user</td>
+            <td ng-bind="cpuTimes.user"></td>
+          </tr>
+        </tbody>
+      </table>
+    </md-grid-tile>
+    <md-grid-tile md-rowspan="2" md-colspan="4">
+      <table class="pure-table" style="width:100%;height:100%;">
+        <thead>
+          <tr>
+            <th colspan="2">
+              <strong>Swap</strong>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>free</td>
+            <td ng-bind="swap.free"></td>
+          </tr>
+          <tr>
+            <td>percent</td>
+            <td ng-bind="swap.percent"></td>
+          </tr>
+          <tr>
+            <td>sin</td>
+            <td ng-bind="swap.sin"></td>
+          </tr>
+          <tr>
+            <td>sout</td>
+            <td ng-bind="swap.sout"></td>
+          </tr>
+          <tr>
+            <td>total</td>
+            <td ng-bind="swap.total"></td>
+          </tr>
+          <tr>
+            <td>used</td>
+            <td ng-bind="swap.used"></td>
+          </tr>
+        </tbody>
+      </table>
+    </md-grid-tile> 
+    <md-grid-tile md-rowspan="3" md-colspan="4">
+      <table class="pure-table memery-table" style="width:100%;height:100%;">
+        <thead>
+          <tr>
+            <th colspan="2">
+              <strong>Memery</strong>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:50%">active</td>
+            <td ng-bind="memory.active">0.0 B</td>
+          <tr>
+            <td>available</td>
+            <td ng-bind="memory.available">0.0 B</td>
+          </tr>
+          <tr>
+            <td>buffers</td>
+            <td ng-bind="memory.buffers"> 0.0 B</td>
+          </tr>
+          <tr>
+            <td>cached</td>
+            <td ng-bind="memory.cached">0.0 B</td>
+          </tr>
+          <tr>
+            <td>free</td>
+            <td ng-bind="memory.free">0.0 B</td>
+          </tr>
+          <tr>
+            <td>inactive</td>
+            <td ng-bind="memory.inactive">0.0 B</td>
+          </tr>
+          <tr>
+            <td>percent</td>
+            <td ng-bind="memory.percent">0.0 B</td>
+          </tr>
+          <tr>
+            <td>shared</td>
+            <td ng-bind="memory.shared">0.0 B</td>
+          </tr>
+          <tr>
+            <td>used</td>
+            <td ng-bind="memory.used">0.0 B</td>
+          </tr>
+          <tr>
+            <td>wired</td>
+            <td ng-bind="memory.wired">0.0 B</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-grid-tile>
+  </md-grid-list>
+</md-content>

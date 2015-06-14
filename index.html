@@ -1,0 +1,66 @@
+<html lang="en" ng-app="app">
+
+<head>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="index.css">
+  <meta name="viewport" content="initial-scale=1"/>
+</head>
+
+<body layout="column" ng-controller="AppCtrl">
+  <md-content>
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleMenu()" class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h1 class="md-toolbar-tools" layout-align-gt-sm="center">
+          <strong>Wheels监控系统</strong>
+        </h1>
+      </div>
+    </md-toolbar>
+    <ng-view>
+    </ng-view>
+  </md-content>
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="menu">
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Wheels</h1>
+    </md-toolbar>
+    <md-content ng-controller="menuCtrl" layout-padding>
+      <md-list>
+        <md-list-item ng-click="navigateTo('dashboard', $event)"
+        ng-class="{active:label==='dashboard'}">
+          <md-icon md-svg-icon="cached"></md-icon>
+          <p>仪表盘</p>
+        </md-list-item>
+        <!-- <md-list-item ng-click="navigateTo('process', $event)"
+        ng-class="{active:label==='process'}">
+          <md-icon md-svg-icon="cached"></md-icon>
+          <p>进程</p>
+        </md-list-item> -->
+        <md-list-item ng-click="navigateTo('network', $event)"
+        ng-class="{active:label==='network'}">
+          <md-icon md-svg-icon="cached"></md-icon>
+          <p>网络</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('disk', $event)"
+        ng-class="{active:label==='disk'}">
+          <md-icon md-svg-icon="cached"></md-icon>
+          <p>磁盘</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+  <!-- Angular Material Dependencies -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-material/angular-material.min.js"></script>
+  <script src="javascript/services.js"></script>
+  <script src="javascript/controllers.js"></script>
+  <script src="javascript/app.js"></script>
+</body>
+
+</html>

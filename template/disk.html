@@ -1,0 +1,87 @@
+<md-content layout="column" class="md-padding gridListdemoBasicUsage">
+  <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
+        <md-grid-tile class="gray" md-rowspan="1" md-colspan="6" md-colspan-sm="1">
+            <table class="pure-table pure-table-horizontal" style="width:100%;height:100%;">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <h3>Disks</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>device</th>
+                        <th>fstype</th>
+                        <th>mountpoint</th>
+                        <th>opts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="partition in partitions">
+                        <td ng-bind="partition.device"></td>
+                        <td ng-bind="partition.fstype"></td>
+                        <td ng-bind="partition.mountpoint"></td>
+                        <td ng-bind="partition.opts"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-grid-tile>
+        <md-grid-tile class="gray" md-rowspan="2" md-colspan="3" md-colspan-sm="1">
+            <table class="pure-table pure-table-horizontal" style="width:100%;height:100%;">
+                <thead>
+                    <tr>
+                        <th colspan="6">
+                            <h3>Disks I/O</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Read Bytes</th>
+                        <th>Read Count</th>
+                        <th>Read Time</th>
+                        <th>Write Bytes</th>
+                        <th>Write Count</th>
+                        <th>Write Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ng-bind="io.read_bytes"></td>
+                        <td ng-bind="io.read_count"></td>
+                        <td ng-bind="io.read_time"></td>
+                        <td ng-bind="io.write_bytes"></td>
+                        <td ng-bind="io.write_count"></td>
+                        <td ng-bind="io.write_count"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-grid-tile>
+        <md-grid-tile class="gray" md-rowspan="2" md-colspan="3" md-colspan-sm="1">
+            <table class="pure-table pure-table-horizontal" style="width:100%;height:100%;">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <h3>Disks Usage</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Free</td>
+                        <td ng-bind="usage.free"></td>
+                    </tr>
+                    <tr>
+                        <td>Percent</td>
+                        <td ng-bind="usage.percent"></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td ng-bind="usage.total"></td>
+                    </tr>
+                    <tr>
+                        <td>Used</td>
+                        <td ng-bind="usage.used"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-grid-tile>
+    </md-grid-list>
+</md-content>
